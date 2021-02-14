@@ -1,0 +1,12 @@
+<table rules=rows>
+     <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Clicks</th>
+     </tr>
+     <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.click}}</td>
+     </tr>
+</table>
