@@ -21,3 +21,8 @@ ul {
  li a:hover {
      background-color: #111;
  }
+
+ .footer {
+    position:relative;
+    top: 150px;
+ }
