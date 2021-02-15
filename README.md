@@ -1,6 +1,6 @@
 # Nggame
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
+A mini game demo, winning by having the least clicks to match lucky number.
 
 ## Development server
 

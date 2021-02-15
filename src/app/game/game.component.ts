@@ -31,7 +31,9 @@ export class GameComponent implements OnInit {
   }
 
   isLuckyNum(): void {
-    let name = window.prompt(`bingo! ${this.gameService.click > 1? this.gameService.click +' clicks!' : this.gameService.click + ' click!'}`) + ''; //TODO "12" should show before pop up window
+    let name = window.prompt(
+      `bingo! ${this.gameService.click > 1? this.gameService.click 
+        +' clicks!' : this.gameService.click + ' click!'} Input your name:`) + ''; //TODO "12" should show before pop up window
     this.save(name, this.gameService.click);
     this.gameService.click = 0;
   }
