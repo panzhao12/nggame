@@ -11,19 +11,21 @@ import { User } from './user';
 export class GameService {
   luckyNum: string = '12';
   genNum: string = '?';
-  click: number = 0;
+  clicks: number = 0;
 
-  private usersUrl = 'api/users';
+  private usersUrl;
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
+  // httpOptions = {
+  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  // };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.usersUrl = 'http://localhost:8080/users'
+   }
 
   //generate random number from 0 to 20
   generateNum(): string {
-    this.click++;
+    this.clicks++;
     return Math.round(Math.random() * 20) + '';
   }
 
@@ -32,6 +34,6 @@ export class GameService {
   }
 
   saveRank(user: User): Observable<User> {
-    return this.http.post<User>(this.usersUrl, user, this.httpOptions);//TODO errow handling
+    return this.http.post<User>(this.usersUrl, user);//TODO errow handling
   }
 }

@@ -8,8 +8,8 @@ import { User } from './user';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const users: User[] = [
-      { id: 1, name: 'Olga', click: 1 },
-      { id: 2, name: 'Pan', click: 12 }
+      { id: 1, name: 'Olga', clicks: 1 },
+      { id: 2, name: 'Pan', clicks: 12 }
     ];
     return {users};
   }

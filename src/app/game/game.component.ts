@@ -12,7 +12,7 @@ export class GameComponent implements OnInit {
   genNum!: string;
   users!: User[];
 
-  constructor(private gameService: GameService) {}
+  constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
     this.luckyNum = this.gameService.luckyNum;
@@ -22,26 +22,26 @@ export class GameComponent implements OnInit {
 
   getUsers(): void {
     this.gameService.getUsers()
-    .subscribe(users => this.users = users);
+      .subscribe(users => this.users = users);
   }
 
   generateNum(): void {
     this.genNum = this.gameService.generateNum();
-    if(this.genNum === this.luckyNum) {this.isLuckyNum();}
+    if (this.genNum === this.luckyNum) { this.isLuckyNum(); }
   }
 
   isLuckyNum(): void {
     let name = window.prompt(
-      `bingo! ${this.gameService.click > 1? this.gameService.click 
-        +' clicks!' : this.gameService.click + ' click!'} Input your name:`) + ''; //TODO "12" should show before pop up window
-    this.save(name, this.gameService.click);
-    this.gameService.click = 0;
+      `bingo! ${this.gameService.clicks > 1 ? this.gameService.clicks
+        + ' clicks!' : this.gameService.clicks + ' click!'} Input your name:`) + ''; //TODO "12" should show before pop up window
+    this.save(name, this.gameService.clicks);
+    this.gameService.clicks = 0;
   }
 
-  save(name: string, click: number): void {
+  save(name: string, clicks: number): void {
     name = name.trim();
     if (!name || name === 'null') { return; }
-    this.gameService.saveRank({ name, click } as User)
+    this.gameService.saveRank({ name, clicks } as User)
       .subscribe(user => {
         this.users.push(user);
       });

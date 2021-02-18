@@ -18,7 +18,7 @@ export class RankComponent implements OnInit {
 
   getUsers(): void {
     this.gameService.getUsers()
-    .subscribe(users => { users.sort((a, b) => a.click - b.click);this.users = users; });
+    .subscribe(users => { users.sort((a, b) => a.clicks - b.clicks);this.users = users; });
   }
 
 }
