@@ -7,8 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-@Getter @Setter
-@NoArgsConstructor
+@Data
 public class User {
 
     @Id
@@ -17,8 +16,4 @@ public class User {
     private String name;
     private int clicks;
 
-    public User(String name, int clicks) {
-        this.name = name;
-        this.clicks = clicks;
-    }
 }

@@ -1,5 +1,6 @@
 package de.olgapan;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,11 +9,8 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")  //To fix cross origin sharing problem
 public class UserController {
 
-    private final UserRepository userRepository;
-
-    UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping("/users")
     List<User> allUser() {
