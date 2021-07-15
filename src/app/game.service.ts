@@ -30,10 +30,10 @@ export class GameService {
   }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.usersUrl); //TODO errow handling
+    return this.http.get<User[]>(this.usersUrl); //TODO error handling
   }
 
   saveRank(user: User): Observable<User> {
-    return this.http.post<User>(this.usersUrl, user);//TODO errow handling
+    return this.http.post<User>(this.usersUrl, user);//TODO error handling
   }
 }
