@@ -27,7 +27,7 @@ export class GameComponent implements OnInit {
 
   generateNum(): void {
     this.genNum = this.gameService.generateNum();
-    if (this.genNum === this.luckyNum) { this.isLuckyNum(); }
+    if (this.genNum === this.luckyNum) { setTimeout(()=>this.isLuckyNum(), 0); }
   }
 
   isLuckyNum(): void {
