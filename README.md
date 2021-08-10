@@ -1,3 +1,3 @@
 # Nggame
 
-A mini game demo, match lucky number with the least clicks.
+A mini game demo, match number 12 with the least clicks.
