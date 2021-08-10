@@ -14,7 +14,7 @@
     background-color: #333;
 }
 
-a {
+.nav a {
     display: block;
     color: white;
     text-align: center;
