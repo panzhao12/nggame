@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from './user';
+import { User } from '../user';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +19,8 @@ export class GameService {
   // };
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/users'
+    // this.usersUrl = 'http://localhost:8080/users' //use java backend
+    this.usersUrl = 'api/users'
    }
 
   //generate random number from 0 to 20

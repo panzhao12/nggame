@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GameService } from '../game.service';
+import { GameService } from '../services/game.service';
 import { User } from '../user';
 
 @Component({
@@ -8,7 +8,7 @@ import { User } from '../user';
   styleUrls: ['./game.component.css']
 })
 export class GameComponent implements OnInit {
-  luckyNum!: string; //TODO: any problem with definite assignment assertion?
+  luckyNum!: string;
   genNum!: string;
   users!: User[];
 
@@ -32,10 +32,11 @@ export class GameComponent implements OnInit {
 
   isLuckyNum(): void {
     let name = window.prompt(
-      `bingo! ${this.gameService.clicks > 1 ? this.gameService.clicks
-        + ' clicks!' : this.gameService.clicks + ' click!'} Input your name:`) + ''; //TODO "12" should show before pop up window
+      `Bingo! ${this.gameService.clicks > 1 ? this.gameService.clicks
+        + ' clicks!' : this.gameService.clicks + ' click!'} Please input your name:`) + '';
     this.save(name, this.gameService.clicks);
     this.gameService.clicks = 0;
+    this.genNum = '?';
   }
 
   save(name: string, clicks: number): void {
