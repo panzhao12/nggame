@@ -1,3 +1,3 @@
 # Nggame
 
-A mini game demo, match number 12 with the least clicks.
+A mini game demo using Angular, to match number 12 with the least clicks!
